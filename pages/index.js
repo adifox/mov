@@ -17,6 +17,42 @@ export default function Home({ storyblokData }) {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
       </main>
 
       <footer className={styles.footer}>
@@ -38,7 +74,7 @@ export default function Home({ storyblokData }) {
 export const getStaticProps = async () => {
   const response = await getCacheVersion()
 
-  console.log('CONNECTED:', response)
+  // console.log('CONNECTED:', response)
 
   const storyblokData = await getStoryblokData('cdn/stories/home', {
     cv: response.data.space.version,
