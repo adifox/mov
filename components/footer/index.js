@@ -14,6 +14,9 @@ const {
   white,
   legalLinkWrapper,
   copyWright,
+  addres,
+  contact,
+  links,
 } = styles
 
 export const Footer = () => (
@@ -26,10 +29,16 @@ export const Footer = () => (
             <a>{logoSVG(white)}</a>
           </Link>
         </div>
-        <div>Direccion</div>
-        <div>Datos de contacto</div>
+        <div className={addres}>
+          <p>Calle Doctor Alcay 16 Oficina C</p>
+          <p>50.006 Zaragoza</p>
+        </div>
+        <div className={contact}>
+          <p>876 28 08 06</p>
+          <p>info@estudiomov.es</p>
+        </div>
       </div>
-      <div>Enlaces</div>
+      <div className={links}>Enlaces</div>
     </div>
     <div className={bottom}>
       <div className={copyWright}>
@@ -38,13 +47,19 @@ export const Footer = () => (
       <div className={legalLinkWrapper}>
         <ul className={legalLinks}>
           <li>
-            <a>AVISO LEGAL</a>
+            <Link href='/legal'>
+              <a>AVISO LEGAL</a>
+            </Link>
           </li>
           <li>
-            <a>PRIVACIDAD</a>
+            <Link href='/privacidad'>
+              <a>PRIVACIDAD</a>
+            </Link>
           </li>
           <li>
-            <a>COOKIES</a>
+            <Link href='/cookies'>
+              <a>COOKIES</a>
+            </Link>
           </li>
         </ul>
       </div>
