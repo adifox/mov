@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
 // Components
-import Header from '../header'
-// import Footer from '../footer'
+import { Header } from '../header'
+import { Footer } from '../footer'
 
 // Styles
 import styles from './layout.module.css'
@@ -17,7 +17,7 @@ export const Layout = ({ children }) => {
       </Head>
       <Header />
       <div className={main}>{children}</div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

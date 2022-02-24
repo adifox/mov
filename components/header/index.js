@@ -2,8 +2,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 // Components
-import { Logo } from '../ui-components/logo'
 import { Modal } from '../ui-components/modal'
+import { logoSVG } from '../ui-components/svg'
 // Styles
 import styles from './header.module.css'
 
@@ -13,8 +13,6 @@ const {
   closeHeaderModal,
   mobileLinks,
   closeMobileLinks,
-  modalBackground,
-  closeModalBackground,
   headerWrapper,
   headerWrapperOpen,
   headerContainer,
@@ -23,15 +21,13 @@ const {
   ulStyle,
   menuButton,
   mobileMenu,
+  green,
 } = styles
 
-const Header = () => {
+export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false)
   const modalStyle = isMenuOpen ? headerModal : closeHeaderModal
   const mobileNavItems = isMenuOpen ? mobileLinks : closeMobileLinks
-  const modalBackgroundStyles = isMenuOpen
-    ? modalBackground
-    : closeModalBackground
   const headerWrapperStyles = isMenuOpen ? headerWrapperOpen : headerWrapper
 
   return (
@@ -40,9 +36,7 @@ const Header = () => {
         <div className={headerContainer}>
           <div className={logoWrapper}>
             <Link href='/'>
-              <a>
-                <Logo />
-              </a>
+              <a>{logoSVG(green)}</a>
             </Link>
           </div>
           <nav className={navSection}>
@@ -79,10 +73,6 @@ const Header = () => {
           </button>
         </div>
       </header>
-      <div
-        className={modalBackgroundStyles}
-        onClick={() => setMenuOpen(!isMenuOpen)}
-      ></div>
       <Modal
         className={modalStyle}
         onClickHandler={() => setMenuOpen(!isMenuOpen)}
@@ -113,5 +103,3 @@ const Header = () => {
     </>
   )
 }
-
-export default Header
