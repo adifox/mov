@@ -21,7 +21,7 @@
 }
 .mainBody {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /* max-height: 250px; */
   justify-content: space-between;
   max-width: 1200px;
@@ -31,6 +31,7 @@
 .logoSection {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .logoWrapper {
   position: relative;
@@ -38,18 +39,37 @@
   width: 150px;
   margin-bottom: 20px;
 }
-.addres,
-.contact,
-.links {
-  margin-left: 24px;
-  margin-bottom: 16px;
+.logoAddressSection {
+  display: flex;
+  flex-direction: column;
+}
+.addressLinkSection,
+.contact {
   font-size: 14px;
   line-height: 20px;
   font-weight: 300;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 6px;
 }
-.addres p,
+.addressBox {
+  display: flex;
+  flex-direction: column;
+}
+.addressLinkSection p,
 .contact p {
   margin: 0;
+}
+.pageLinks {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+.pageLinks li {
+  margin-bottom: 5px;
 }
 .bottom {
   display: flex;
@@ -57,12 +77,14 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  /* padding: 0 6px; */
+  padding: 0 6px;
   font-size: 14px;
 }
 .legalLinkWrapper {
   display: flex;
-  padding: 0 8px;
+  margin: 24px 5px 8px;
+  order: 1;
+  /* padding: 0 8px; */
 }
 .legalLinks {
   display: flex;
@@ -70,30 +92,96 @@
   width: 100%;
   justify-content: space-between;
   padding: 0;
+  margin: 0 5px;
 }
 .legalLinks li {
   list-style: none;
 }
 .copyWright {
   display: flex;
-  padding: 0 8px;
+  margin: 0 5px 5px;
+  order: 2;
+  /* padding: 0 8px; */
 }
-/* .links li {
-  margin-left: 30px;
-} */
+.copyWright p {
+  margin: 0;
+}
+.socialMedia {
+  display: flex;
+  margin-top: 5px;
+}
+.facebookWrapper,
+.instaWrapper {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  margin-right: 4px;
+}
 
 @media (min-width: 576px) {
 }
 @media (min-width: 768px) {
   .mainBody,
   .bottom {
+    width: 100%;
     flex-direction: row;
+    margin-bottom: 24px;
+    font-size: 16px;
   }
-  .links > li:first-of-type {
+  .mainBody {
+    margin-top: 50px;
+  }
+  .legalLinks,
+  .legalLinkWrapper {
+    margin: 0;
+  }
+  .legalLinkWrapper {
+    order: 2;
+  }
+  .copyWright {
+    order: 1;
+  }
+  .legalLinks li {
+    margin-left: 30px;
+    list-style-type: disc;
+  }
+  .legalLinks > li:first-of-type {
     list-style: none;
   }
-  .links li {
+  .pageLinks {
+    flex-direction: row;
+    font-size: 16px;
+    margin: 0;
+    align-items: center;
+  }
+  .pageLinks li {
     margin-left: 30px;
+  }
+  .addressLinkSection {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    justify-content: space-between;
+    flex-direction: row;
+    /* background-color: green; */
+  }
+  .addressBox {
+    justify-content: center;
+  }
+  .contact {
+    margin-left: 10px;
+  }
+  .logoAddressSection {
+    width: 100%;
+    flex-direction: row;
+    /* background-color: red; */
+  }
+  .logoWrapper {
+    width: 300px;
+    height: 90px;
+    margin-right: 16px;
+    margin-bottom: 16px;
   }
 }
 @media (min-width: 992px) {

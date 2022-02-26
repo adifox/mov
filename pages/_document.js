@@ -13,12 +13,6 @@ export default function Document() {
           rel='stylesheet'
           href='https://fonts.googleapis.com/icon?family=Material+Icons'
         />
-        <link
-          rel='preload'
-          href='/fonts/Matter-Regular.ttf'
-          as='font'
-          crossOrigin=''
-        />
       </Head>
       <body>
         <Main />

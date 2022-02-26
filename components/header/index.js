@@ -42,9 +42,6 @@ export const Header = () => {
           <nav className={navSection}>
             <ul className={ulStyle}>
               <li className={menuItems}>
-                <Link href='/'>INICIO</Link>
-              </li>
-              <li className={menuItems}>
                 <Link href='/actividades'>ACTIVIDADES</Link>
               </li>
               <li className={menuItems}>
@@ -79,9 +76,6 @@ export const Header = () => {
       >
         <nav className={mobileMenu} onClick={() => setMenuOpen(!isMenuOpen)}>
           <ul>
-            <li className={mobileNavItems}>
-              <Link href='/'>INICIO</Link>
-            </li>
             <li className={mobileNavItems}>
               <Link href='/actividades'>ACTIVIDADES</Link>
             </li>
