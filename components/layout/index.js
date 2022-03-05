@@ -16,7 +16,7 @@ export const Layout = ({ children }) => {
         <title>Estudio Mov</title>
       </Head>
       <Header />
-      <div className={main}>{children}</div>
+      <main className={main}>{children}</main>
       <Footer />
     </>
   )

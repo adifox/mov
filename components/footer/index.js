@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Logo } from '../ui-components/logo'
 import { footerSVG, logoSVG, facebookSVG, instaSVG } from '../ui-components/svg'
 import styles from './footer.module.css'
 
@@ -14,9 +13,9 @@ const {
   white,
   legalLinkWrapper,
   copyWright,
-  addressLinkSection,
+  linksSection,
+  contactSection,
   contact,
-  links,
   pageLinks,
   logoAddressSection,
   socialMedia,
@@ -36,41 +35,42 @@ export const Footer = () => (
               <a>{logoSVG(white)}</a>
             </Link>
           </div>
-          <div className={addressLinkSection}>
-            <div className={addressBox}>
-              <p>Calle Doctor Alcay 16 Oficina C</p>
-              <p>50.006 Zaragoza</p>
-            </div>
-            <ul className={pageLinks}>
-              <li>
-                <Link href='/actividades'>
-                  <a>Actividades</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='/guias'>
-                  <a>Guias</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='/regalos'>
-                  <a>Regalos</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='/exposiciones'>
-                  <a>Exposiciones</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='/rsc'>
-                  <a>RSC</a>
-                </Link>
-              </li>
-            </ul>
+          <div className={addressBox}>
+            <p>Calle Doctor Alcay 16 Oficina C</p>
+            <p>50.006 Zaragoza</p>
           </div>
         </div>
-
+        <div className={linksSection}>
+          <ul className={pageLinks}>
+            <li>
+              <Link href='/actividades'>
+                <a>Actividades</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/guias'>
+                <a>Guias</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/regalos'>
+                <a>Regalos</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/exposiciones'>
+                <a>Exposiciones</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/rsc'>
+                <a>RSC</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className={contactSection}>
         <div className={contact}>
           <p>876 28 08 06</p>
           <p>info@estudiomov.es</p>
@@ -88,7 +88,6 @@ export const Footer = () => (
           </div>
         </div>
       </div>
-      {/* <div className={links}></div> */}
     </div>
     <div className={bottom}>
       <div className={copyWright}>

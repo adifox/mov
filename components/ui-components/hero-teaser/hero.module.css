@@ -1,0 +1,57 @@
+.heroWrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  /* max-height: 450px; */
+  justify-content: flex-end;
+  /* background-color: red; */
+}
+.imageWrapper {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  overflow: hidden;
+  /* border-top-left-radius: 40px 20px; */
+  border-top-right-radius: 120px 16px;
+  /* border-radius: 46% 54% 100% 0% / 24% 100% 0% 76%; */
+}
+.heroTitleWrapper {
+  position: absolute;
+  display: flex;
+  top: 10%;
+  flex-direction: column;
+}
+.heroTitleWrapper h1 {
+  color: #9bc5ac;
+  width: 40%;
+}
+.heroTitleWrapper h2 {
+  width: 44%;
+  font-weight: 200;
+  margin-bottom: 48px;
+}
+.boldTitle {
+  font-size: 45px;
+}
+.designElement {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-left: -30px;
+  margin-top: 100px;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

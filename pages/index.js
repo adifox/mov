@@ -3,14 +3,28 @@ import Image from 'next/image'
 import { getCacheVersion, getStoryblokData } from '../utils/storyblok'
 import styles from '../styles/Home.module.css'
 
+// Components
+import { HeroTeaser } from '../components/ui-components/hero-teaser'
+
+const COMPONENTS = {
+  teaser: HeroTeaser,
+}
+
 export default function Home({ storyblokData }) {
+  let pageContent = null
+  storyblokData.data.story.content.body.map((blok) => {
+    const Component = COMPONENTS[blok.component]
+    if (Component) {
+      pageContent = <Component blok={blok} />
+    }
+  })
   return (
     <>
       <Head>
         <meta name='description' content='Pagina de inicio de Estudio Mov' />
       </Head>
 
-      <main>In main</main>
+      <div>{pageContent}</div>
     </>
   )
 }
