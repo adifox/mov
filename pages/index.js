@@ -23,8 +23,7 @@ export default function Home({ storyblokData }) {
       <Head>
         <meta name='description' content='Pagina de inicio de Estudio Mov' />
       </Head>
-
-      <div>{pageContent}</div>
+      {pageContent}
     </>
   )
 }

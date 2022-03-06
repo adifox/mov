@@ -137,7 +137,9 @@
   .logoAddressSection {
     flex-direction: row;
   }
-  .mainBody,
+  .mainBody {
+    padding: 64px 16px 16px;
+  }
   .bottom {
     padding: 16px;
   }

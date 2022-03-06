@@ -11,6 +11,8 @@ const {
   heroTitleWrapper,
   boldTitle,
   designElement,
+  designElementWrapper,
+  ctaButtonWrapper,
 } = styles
 
 export const HeroTeaser = ({ blok }) => {
@@ -22,24 +24,26 @@ export const HeroTeaser = ({ blok }) => {
   return (
     <div className={heroWrapper}>
       <div className={heroTitleWrapper}>
-        {/* <h1>
+        <h1>
           {intro}
           <span className={boldTitle}>{` ${title}`}</span>
-        </h1> */}
-        {/* <h2>{subtitle}</h2>
-        {ctaButton}
-        <div className={designElement}>
-          <Image
-            src={'/images/circulos-decorativos.png'}
-            alt='circulo-decorativo'
-            layout='fill'
-            priority
-          />
-        </div> */}
+        </h1>
+        <h2>{subtitle}</h2>
+        <div className={ctaButtonWrapper}>{ctaButton}</div>
+        <div className={designElementWrapper}>
+          <div className={designElement}>
+            <Image
+              src={'/images/circulos-decorativos.png'}
+              alt='circulo-decorativo'
+              layout='fill'
+              priority
+            />
+          </div>
+        </div>
       </div>
-      {/* <div className={imageWrapper}>
+      <div className={imageWrapper}>
         <Image src={image.filename} alt={image.alt} layout='fill' priority />
-      </div> */}
+      </div>
     </div>
   )
 }
