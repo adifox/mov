@@ -2,8 +2,11 @@
   background-color: #9cc6ad;
   width: 100vw;
   color: white;
+  position: relative;
 }
 .customShapeDividerTop {
+  width: 100%;
+  position: absolute;
   margin-top: -5px;
   transform: rotate(180deg);
 }
@@ -22,6 +25,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 8px 6px;
+  padding-top: 64px;
 }
 .logoSection {
   display: flex;
