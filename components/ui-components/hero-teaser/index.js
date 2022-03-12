@@ -41,7 +41,13 @@ export const HeroTeaser = ({ blok }) => {
         </div>
       </div>
       <div className={imageWrapper}>
-        <Image src={image.filename} alt={image.alt} layout='fill' priority />
+        <Image
+          src={image.filename}
+          alt={image.alt}
+          width={640}
+          height={640}
+          priority
+        />
       </div>
     </div>
   )
