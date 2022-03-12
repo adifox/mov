@@ -16,7 +16,6 @@ const {
 } = styles
 
 export const HeroTeaser = ({ blok }) => {
-  console.log('THE BLOK DATA:', blok)
   const { image, intro, title, subtitle, cta } = blok
   const ctaButton = cta.map((element) => (
     <Button key={element._uid} title={element.buttonText} />

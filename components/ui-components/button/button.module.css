@@ -1,10 +1,10 @@
 .buttonStyle {
-  padding: 10px 20px;
+  padding: 8px 24px;
   border: none;
   border-radius: 25px;
   background-color: #9bc5ac;
   color: white;
   max-width: 200px;
-  font-size: 16px;
-  letter-spacing: 4px;
+  font-size: 14px;
+  letter-spacing: 2px;
 }

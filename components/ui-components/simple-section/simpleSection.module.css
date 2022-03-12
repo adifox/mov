@@ -1,0 +1,58 @@
+.simpleSectionWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 24px 0;
+  position: relative;
+}
+.imageWrapper {
+  position: relative;
+}
+.simpleSectionTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #45533c;
+  color: #fff;
+  padding: 0 96px 0 64px;
+}
+.simpleSectionTitleWrapper h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+.simpleSectionTitleWrapper h3 {
+  font-weight: 200;
+  margin: 16px 0 32px;
+}
+.ctaButtonWrapper {
+  display: flex;
+}
+.ctaButtonWrapper button {
+  background-color: #a69c6b;
+}
+.white {
+  fill: #fff;
+}
+.customShapeDividerTop,
+.customShapeDividerBottom {
+  width: 100%;
+  position: absolute;
+  /* margin-top: -5px; */
+  transform: rotate(180deg);
+  z-index: 1;
+  overflow: hidden;
+  line-height: 0;
+}
+.customShapeDividerTop svg,
+.customShapeDividerBottom svg {
+  position: relative;
+  display: block;
+  width: calc(138% + 1.3px);
+  height: 70px;
+}
+.customShapeDividerBottom {
+  bottom: 0;
+  transform: rotate(360deg);
+  transform: scaleX(-1);
+}
