@@ -75,7 +75,7 @@
   transition-duration: 600ms;
 }
 .closeHeaderModal {
-  transform: translateY(-1000px);
+  transform: translateY(-1500px);
 }
 .headerModal button,
 .closeHeaderModal button {

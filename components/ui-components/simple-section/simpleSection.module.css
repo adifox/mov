@@ -1,6 +1,6 @@
 .simpleSectionWrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   margin: 24px 0;
   position: relative;
 }
@@ -13,7 +13,8 @@
   justify-content: center;
   background-color: #45533c;
   color: #fff;
-  padding: 0 96px 0 64px;
+  padding: 32px 16px 48px 16px;
+  margin-top: -8px;
 }
 .simpleSectionTitleWrapper h2 {
   font-size: 32px;
@@ -27,6 +28,7 @@
 }
 .ctaButtonWrapper {
   display: flex;
+  justify-content: flex-end;
 }
 .ctaButtonWrapper button {
   background-color: #a69c6b;
@@ -38,7 +40,6 @@
 .customShapeDividerBottom {
   width: 100%;
   position: absolute;
-  /* margin-top: -5px; */
   transform: rotate(180deg);
   z-index: 1;
   overflow: hidden;
@@ -49,10 +50,56 @@
   position: relative;
   display: block;
   width: calc(138% + 1.3px);
-  height: 70px;
+  height: 40px;
 }
 .customShapeDividerBottom {
-  bottom: 0;
+  bottom: -16px;
   transform: rotate(360deg);
   transform: scaleX(-1);
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* .simpleSectionTitleWrapper {
+    padding: 0 24px 0 24px;
+    margin-top: 0px;
+  } */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .simpleSectionWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .customShapeDividerBottom {
+    bottom: 0;
+  }
+  .customShapeDividerTop {
+    margin-top: -5px;
+  }
+  .simpleSectionTitleWrapper {
+    padding: 0 16px 0 16px;
+    margin-top: 0px;
+  }
+  .customShapeDividerTop svg,
+  .customShapeDividerBottom svg {
+    height: 40px;
+  }
+  .ctaButtonWrapper {
+    justify-content: flex-start;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .simpleSectionTitleWrapper {
+    padding: 0 96px 0 64px;
+  }
+  .customShapeDividerTop svg,
+  .customShapeDividerBottom svg {
+    height: 70px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }

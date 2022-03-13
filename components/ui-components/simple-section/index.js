@@ -25,7 +25,7 @@ export const SimpleSection = ({ blok }) => {
     <div className={simpleSectionWrapper}>
       <div className={customShapeDividerTop}>{footerSVG(white)}</div>
       <div className={imageWrapper}>
-        <Image src={image.filename} alt={image.alt} width={640} height={640} />
+        <Image src={image.filename} alt={image.alt} width={720} height={640} />
       </div>
       <div className={simpleSectionTitleWrapper}>
         <h2>{title}</h2>
