@@ -7,7 +7,7 @@ import { LeadTextSection } from '../ui-components/leadtext-section'
 import { ImageWrapper } from '../ui-components/image-wrapper'
 import { RichTextComponent } from '../ui-components/richtext-component'
 import { SideBarText } from '../ui-components/sidebar-text'
-import { Slider } from '../ui-components/slider'
+import { SliderWrapper } from '../ui-components/slider'
 
 const COMPONENTS = {
   teaser: HeroTeaser,
@@ -18,7 +18,7 @@ const COMPONENTS = {
   image: ImageWrapper,
   richTextComponent: RichTextComponent,
   sideBarText: SideBarText,
-  slider: Slider,
+  slider: SliderWrapper,
 }
 
 export const DynamicComponent = ({ blok }) => {
