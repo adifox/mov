@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import { getCacheVersion, getStoryblokData } from '../utils/storyblok'
-import { DynamicComponent } from '../components/dynamic-component'
-import styles from '../styles/Home.module.css'
+import { getCacheVersion, getStoryblokData } from '../../utils/storyblok'
+import { DynamicComponent } from '../../components/dynamic-component'
 
-export default function Exposiciones({ storyblokData }) {
+export default function Actividades({ storyblokData }) {
   console.log('DATA:', storyblokData)
   const pageContent = storyblokData.data.story.content.body.map((blok) => (
     <DynamicComponent key={blok._uid} blok={blok} />
@@ -21,7 +20,7 @@ export default function Exposiciones({ storyblokData }) {
 export const getStaticProps = async () => {
   const response = await getCacheVersion()
 
-  const storyblokData = await getStoryblokData('cdn/stories/exposiciones', {
+  const storyblokData = await getStoryblokData('cdn/stories/actividades', {
     cv: response.data.space.version,
     version: 'draft',
   })
