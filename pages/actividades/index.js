@@ -18,12 +18,7 @@ export default function Actividades({ storyblokData }) {
 }
 
 export const getStaticProps = async () => {
-  const response = await getCacheVersion()
-
-  const storyblokData = await getStoryblokData('cdn/stories/actividades', {
-    cv: response.data.space.version,
-    version: 'draft',
-  })
+  const storyblokData = await getStoryblokData('actividades')
 
   return {
     props: { storyblokData },

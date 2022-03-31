@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getCacheVersion, getStoryblokData } from '../utils/storyblok'
+import { getStoryblokData } from '../utils/storyblok'
 import { DynamicComponent } from '../components/dynamic-component'
 import styles from '../styles/Home.module.css'
 
@@ -18,12 +18,7 @@ export default function Home({ storyblokData }) {
 }
 
 export const getStaticProps = async () => {
-  const response = await getCacheVersion()
-
-  const storyblokData = await getStoryblokData('cdn/stories/home', {
-    cv: response.data.space.version,
-    version: 'draft',
-  })
+  const storyblokData = await getStoryblokData('home')
 
   return {
     props: { storyblokData },

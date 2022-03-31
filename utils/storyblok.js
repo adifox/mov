@@ -1,4 +1,9 @@
 import StoryblokClient from 'storyblok-js-client'
+import { handleLinks } from './helpers'
+
+const STORYBLOK_STORIES = 'cdn/stories'
+const STORYBLOK_LINKS = 'cdn/links/'
+const STORYBLOK_SPACES_ME = 'cdn/spaces/me'
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
@@ -9,12 +14,39 @@ const Storyblok = new StoryblokClient({
 })
 
 export const getCacheVersion = async () => {
-  return Storyblok.get('cdn/spaces/me', {})
+  return Storyblok.get(STORYBLOK_SPACES_ME, {})
 }
 
-export const getStoryblokData = async (url, options) => {
-  const data = await Storyblok.get(url, options)
+export const getStoryblokData = async (url, options = {}) => {
+  const cacheVersion = await getCacheVersion()
+  const additionalFetchParams = {
+    ...options,
+    cv: cacheVersion.data.space.version,
+    version: process.env.STORYBLOK_VERSION,
+  }
+  const path = [STORYBLOK_STORIES, url].join('/')
+  const data = await Storyblok.get(path, additionalFetchParams)
+
   return data
+}
+
+export const getStoryblokLinks = async (options = {}) => {
+  const cacheVersion = await getCacheVersion()
+  const additionalFetchParams = {
+    ...options,
+    cv: cacheVersion.data.space.version,
+    version: process.env.STORYBLOK_VERSION,
+  }
+  const storyblokLinks = await Storyblok.get(
+    STORYBLOK_LINKS,
+    additionalFetchParams
+  )
+  const paths = handleLinks(storyblokLinks)
+
+  return {
+    paths,
+    fallback: true,
+  }
 }
 
 export const renderRichtext = (content) => {
