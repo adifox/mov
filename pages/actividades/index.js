@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import { getCacheVersion, getStoryblokData } from '../../utils/storyblok'
+import { getStoryblokData } from '../../utils/storyblok'
 import { DynamicComponent } from '../../components/dynamic-component'
 
-export default function Actividades({ storyblokData }) {
-  console.log('DATA:', storyblokData)
+export default function Actividades({ storyblokData, articleList }) {
+  // console.log('DATA:', storyblokData)
+  console.log('Article List:', articleList)
   const pageContent = storyblokData.data.story.content.body.map((blok) => (
-    <DynamicComponent key={blok._uid} blok={blok} />
+    <DynamicComponent key={blok._uid} blok={blok} articleList={articleList} />
   ))
   return (
     <>
@@ -19,8 +20,27 @@ export default function Actividades({ storyblokData }) {
 
 export const getStaticProps = async () => {
   const storyblokData = await getStoryblokData('actividades')
+  const [articleCluster] = storyblokData.data.story.content.body.filter(
+    (blok) => blok.component === 'articleCluster'
+  )
+  const { publishedArticles } = articleCluster
+
+  let articleList = null
+  if (publishedArticles.length !== 0) {
+    articleList = await Promise.all([
+      ...publishedArticles.map((id) => getSelectedArticle(id)),
+    ])
+  }
 
   return {
-    props: { storyblokData },
+    props: { storyblokData, articleList },
   }
+}
+
+const getSelectedArticle = async (id) => {
+  const response = await getStoryblokData(id, {
+    find_by: 'uuid',
+  })
+
+  return response
 }
