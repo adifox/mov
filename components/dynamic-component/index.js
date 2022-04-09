@@ -23,10 +23,10 @@ const COMPONENTS = {
   articleCluster: ArticleCluster,
 }
 
-export const DynamicComponent = ({ blok, articleList }) => {
+export const DynamicComponent = ({ blok, articleList, expo }) => {
   if (typeof COMPONENTS[blok.component] !== 'undefined') {
     const Component = COMPONENTS[blok.component]
-    return <Component blok={blok} articleList={articleList} />
+    return <Component blok={blok} articleList={articleList} expo={expo} />
   }
 
   return null

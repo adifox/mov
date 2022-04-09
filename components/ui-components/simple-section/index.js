@@ -16,23 +16,56 @@ const {
   customShapeDividerBottom,
 } = styles
 
-export const SimpleSection = ({ blok }) => {
-  const { image, title, subtitle, cta } = blok
+export const SimpleSection = ({ blok, expo }) => {
+  const { image, title, subtitle, cta, imagePosition } = blok
+  const [position] = imagePosition ? imagePosition : [null]
+
   const ctaButton = cta.map((element) => (
     <Button key={element._uid} title={element.buttonText} />
   ))
-  return (
-    <div className={simpleSectionWrapper}>
-      <div className={customShapeDividerTop}>{footerSVG(white)}</div>
-      <div className={imageWrapper}>
-        <Image src={image.filename} alt={image.alt} width={720} height={640} />
+
+  const content =
+    position && position === 'left' ? (
+      <div className={simpleSectionWrapper}>
+        <div className={customShapeDividerTop}>{footerSVG(white)}</div>
+        <div className={imageWrapper}>
+          <Image
+            src={image.filename}
+            alt={image.alt}
+            width={720}
+            height={640}
+          />
+        </div>
+        <div className={simpleSectionTitleWrapper}>
+          <h2>{title}</h2>
+          <h3>{subtitle}</h3>
+          <div className={ctaButtonWrapper}>{ctaButton}</div>
+        </div>
+        {!expo && (
+          <div className={customShapeDividerBottom}>{footerSVG(white)}</div>
+        )}
       </div>
-      <div className={simpleSectionTitleWrapper}>
-        <h2>{title}</h2>
-        <h3>{subtitle}</h3>
-        <div className={ctaButtonWrapper}>{ctaButton}</div>
+    ) : (
+      <div className={simpleSectionWrapper}>
+        <div className={customShapeDividerTop}>{footerSVG(white)}</div>
+        <div className={simpleSectionTitleWrapper}>
+          <h2>{title}</h2>
+          <h3>{subtitle}</h3>
+          <div className={ctaButtonWrapper}>{ctaButton}</div>
+        </div>
+        <div className={imageWrapper}>
+          <Image
+            src={image.filename}
+            alt={image.alt}
+            width={720}
+            height={640}
+          />
+        </div>
+        {!expo && (
+          <div className={customShapeDividerBottom}>{footerSVG(white)}</div>
+        )}
       </div>
-      <div className={customShapeDividerBottom}>{footerSVG(white)}</div>
-    </div>
-  )
+    )
+
+  return content
 }

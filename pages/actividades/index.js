@@ -34,6 +34,7 @@ export const getStaticProps = async () => {
 
   return {
     props: { storyblokData, articleList },
+    revalidate: 10,
   }
 }
 
