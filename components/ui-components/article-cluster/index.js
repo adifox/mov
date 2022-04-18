@@ -1,17 +1,15 @@
-import { getStoryblokData } from '../../../utils/storyblok'
+import { ArticleClusterItem } from './articleClusterItem'
+import { mainWrapper } from './articleCluster.module.css'
 
 export const ArticleCluster = ({ articleList }) => {
   console.log('ARTICLE CLUSTER DATA:', articleList)
 
   const content = articleList.map((article) => {
-    return <li key={article.data.story.uuid}>{article.data.story.name}</li>
+    const {
+      data: { story },
+    } = article
+    return <ArticleClusterItem key={story.uuid} story={story} />
   })
 
-  return (
-    <div>
-      <h2>Article Cluster</h2>
-      <h3>Available Articles:</h3>
-      <ul>{content}</ul>
-    </div>
-  )
+  return <div className={mainWrapper}>{content}</div>
 }

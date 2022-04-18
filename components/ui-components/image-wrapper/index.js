@@ -5,9 +5,7 @@ const PIXEL_IMAGE =
 
 export const ImageWrapper = ({ blok, blur }) => {
   const placeholderType = blur ? 'blur' : 'empty'
-  const {
-    src: { filename, alt },
-  } = blok
+  const { filename, alt } = blok
 
   return (
     <Image
