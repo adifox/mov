@@ -16,7 +16,7 @@ export default function Actividades({ storyblokData, articleList }) {
   console.log('DATA:', storyblokData)
   console.log('Article List:', articleList)
   let headerContent = null
-  const pageContent = storyblokData.data.story.content.body.map((blok) => {
+  const pageContent = storyblokData?.data?.story?.content?.body?.map((blok) => {
     if (blok.component && COMPONENTS[blok.component]) {
       const Component = COMPONENTS[blok.component]
       headerContent = <Component key={blok._uid} blok={blok} />

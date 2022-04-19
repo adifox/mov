@@ -1,20 +1,37 @@
 import Head from 'next/head'
 import { getStoryblokLinks, getStoryblokData } from '../../utils/storyblok'
 import { DynamicComponent } from '../../components/dynamic-component'
+import { ArticleHeader } from '../../components/ui-components/article-header'
+import { mainWrapper, bodyContent } from '../../styles/guias.module.css'
 
 const PAGE_PATH = 'actividades'
+const COMPONENTS = {
+  articleHeader: ArticleHeader,
+}
 
 export default function Actividades({ storyblokData }) {
-  console.log('DATA:', storyblokData)
-  const pageContent = storyblokData.data.story.content.body.map((blok) => (
-    <DynamicComponent key={blok._uid} blok={blok} />
-  ))
+  let headerContent = null
+  const pageContent = storyblokData.data.story.content.body.map((blok) => {
+    if (blok.component && COMPONENTS[blok.component]) {
+      const ArticleHeaderComponent = COMPONENTS[blok.component]
+      headerContent = <ArticleHeaderComponent key={blok._uid} blok={blok} />
+    } else {
+      return <DynamicComponent key={blok._uid} blok={blok} />
+    }
+  })
+
   return (
     <>
       <Head>
-        <meta name='description' content='Guías de reciclaje Estudio Mov' />
+        <meta
+          name='description'
+          content='Todas las actividades de Estudio Mov'
+        />
       </Head>
-      {pageContent}
+      <div className={mainWrapper}>
+        {headerContent}
+        <div className={bodyContent}>{pageContent}</div>
+      </div>
     </>
   )
 }

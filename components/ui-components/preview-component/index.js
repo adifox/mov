@@ -5,7 +5,9 @@ import { mainWrapper } from './previewComponent.module.css'
 export const PreviewComponent = ({ data }) => {
   console.log('THE PREVIEW DATA:', data)
 
-  const image = data.image ? <ImageWrapper blok={data.image} blur /> : null
+  const image = data.image ? (
+    <ImageWrapper blok={data.image[0]} blur width={1024} height={640} />
+  ) : null
   const title = data.title ? <h2>{data.title}</h2> : null
   const leadText = data.text ? <RichTextComponent blok={data} short /> : null
 

@@ -2,13 +2,13 @@ import { renderRichtext } from '../../../utils/storyblok'
 
 export const RichTextComponent = ({ blok, short }) => {
   const { text } = blok
-
+  console.log('THE HELL:', text)
   if (short) {
-    const [firstParagraph, secondParagraph] = text.content
+    const [firstParagraph] = text.content
 
     const reducedContent = {
       type: 'doc',
-      content: [firstParagraph, secondParagraph],
+      content: [firstParagraph],
     }
 
     const HTML = renderRichtext(reducedContent)

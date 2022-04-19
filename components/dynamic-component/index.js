@@ -9,6 +9,7 @@ import { RichTextComponent } from '../ui-components/richtext-component'
 import { SideBarText } from '../ui-components/sidebar-text'
 import { SliderWrapper } from '../ui-components/slider'
 import { ArticleCluster } from '../ui-components/article-cluster'
+import { ArticleHeader } from '../ui-components/article-header'
 
 const COMPONENTS = {
   teaser: HeroTeaser,
@@ -21,6 +22,7 @@ const COMPONENTS = {
   sideBarText: SideBarText,
   slider: SliderWrapper,
   articleCluster: ArticleCluster,
+  articleHeader: ArticleHeader,
 }
 
 export const DynamicComponent = ({ blok, articleList, expo }) => {
