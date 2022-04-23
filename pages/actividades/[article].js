@@ -2,14 +2,14 @@ import Head from 'next/head'
 import { getStoryblokLinks, getStoryblokData } from '../../utils/storyblok'
 import { DynamicComponent } from '../../components/dynamic-component'
 import { ArticleHeader } from '../../components/ui-components/article-header'
-import { mainWrapper, bodyContent } from '../../styles/guias.module.css'
+import { mainWrapper, bodyContent } from '../../styles/article.module.css'
 
 const PAGE_PATH = 'actividades'
 const COMPONENTS = {
   articleHeader: ArticleHeader,
 }
 
-export default function Actividades({ storyblokData }) {
+export default function Article({ storyblokData }) {
   let headerContent = null
   const pageContent = storyblokData.data.story.content.body.map((blok) => {
     if (blok.component && COMPONENTS[blok.component]) {

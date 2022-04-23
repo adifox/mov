@@ -18,7 +18,7 @@ const {
 export const HeroTeaser = ({ blok }) => {
   const { image, intro, title, subtitle, cta } = blok
   const ctaButton = cta.map((element) => (
-    <Button key={element._uid} title={element.buttonText} />
+    <Button key={element._uid} blok={element} />
   ))
   return (
     <div className={heroWrapper}>

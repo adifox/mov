@@ -16,7 +16,7 @@ const {
 export const DesignSection = ({ blok }) => {
   const { image, title, subtitle, cta } = blok
   const ctaButton = cta.map((element) => (
-    <Button key={element._uid} title={element.buttonText} />
+    <Button key={element._uid} blok={element} />
   ))
   return (
     <div className={designSectionWrapper}>

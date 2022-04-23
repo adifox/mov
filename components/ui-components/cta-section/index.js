@@ -8,7 +8,7 @@ const { ctaSectionWrapper, ctaButtonWrapper } = styles
 export const CtaSection = ({ blok }) => {
   const { title, cta } = blok
   const ctaButton = cta.map((element) => (
-    <Button key={element._uid} title={element.buttonText} />
+    <Button key={element._uid} blok={element} />
   ))
   return (
     <div className={ctaSectionWrapper}>

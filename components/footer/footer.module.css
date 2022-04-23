@@ -2,33 +2,45 @@
   display: flex;
   position: absolute;
   width: 100%;
-  max-width: 1200px;
   height: 200px;
   padding: 0;
+  margin-top: -166px;
+  z-index: -1;
+}
+.preFooterDesign svg {
+  transform: rotate(315deg);
+}
+.preFooterDesignInnerwrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  margin-top: -150px;
-  z-index: 2;
 }
 .footer {
   background-color: #9cc6ad;
   width: 100vw;
   color: white;
   position: relative;
+  margin-top: 150px;
 }
 .customShapeDividerTop {
   width: 100%;
   position: absolute;
-  margin-top: -5px;
-  transform: rotate(180deg);
+  margin-top: -30px;
+  overflow: hidden;
+  line-height: 0;
 }
 .customShapeDividerTop svg {
   position: relative;
   display: block;
   width: calc(141% + 1.3px);
-  height: 63px;
+  height: 49px;
 }
 .white {
   fill: #fff;
+}
+.green {
+  fill: #9cc6ad;
 }
 .leaf {
   fill: #44523b;

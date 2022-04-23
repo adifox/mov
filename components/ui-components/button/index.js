@@ -2,16 +2,28 @@ import style from './button.module.css'
 
 const { buttonStyle } = style
 
-export const Button = ({ title, link, onClick }) => {
-  const element = (
-    <button className={buttonStyle} onClick={onClick}>
-      {title}
+export const Button = ({ blok }) => {
+  const { buttonText, buttonLink, buttonColor, target, onClick } = blok
+  const [gotTo] = target
+
+  let element = (
+    <button
+      className={buttonStyle}
+      style={{ background: buttonColor }}
+      onClick={onClick}
+    >
+      {buttonText}
     </button>
   )
-  if (link) {
+  if (buttonLink) {
     element = (
-      <a className={buttonStyle} href={link}>
-        {title}
+      <a
+        className={buttonStyle}
+        style={{ background: buttonColor }}
+        href={buttonLink}
+        target={gotTo}
+      >
+        {buttonText}
       </a>
     )
   }

@@ -17,53 +17,53 @@ const {
 } = styles
 
 export const SimpleSection = ({ blok, expo }) => {
-  const { image, title, subtitle, cta, imagePosition } = blok
-  const [position] = imagePosition ? imagePosition : [null]
+  const {
+    image: { filename, alt },
+    title,
+    subtitle,
+    cta,
+    imagePosition,
+    backgroundColor,
+    titleColor,
+    textColor,
+  } = blok
 
   const ctaButton = cta.map((element) => (
-    <Button key={element._uid} title={element.buttonText} />
+    <Button key={element._uid} blok={element} />
   ))
 
+  const margin = expo ? '0px' : '24px'
+
   const content =
-    position && position === 'left' ? (
-      <div className={simpleSectionWrapper}>
+    imagePosition && imagePosition === 'left' ? (
+      <div style={{ margin }} className={simpleSectionWrapper}>
         <div className={customShapeDividerTop}>{footerSVG(white)}</div>
         <div className={imageWrapper}>
-          <Image
-            src={image.filename}
-            alt={image.alt}
-            width={720}
-            height={640}
-          />
+          {filename && (
+            <Image src={filename} alt={alt} width={720} height={640} />
+          )}
         </div>
-        <div className={simpleSectionTitleWrapper}>
-          <h2>{title}</h2>
-          <h3>{subtitle}</h3>
+        <div className={simpleSectionTitleWrapper} style={{ backgroundColor }}>
+          <h2 style={{ color: titleColor }}>{title}</h2>
+          <h3 style={{ color: textColor }}>{subtitle}</h3>
           <div className={ctaButtonWrapper}>{ctaButton}</div>
         </div>
-        {!expo && (
-          <div className={customShapeDividerBottom}>{footerSVG(white)}</div>
-        )}
+        <div className={customShapeDividerBottom}>{footerSVG(white)}</div>
       </div>
     ) : (
-      <div className={simpleSectionWrapper}>
+      <div style={{ margin }} className={simpleSectionWrapper}>
         <div className={customShapeDividerTop}>{footerSVG(white)}</div>
-        <div className={simpleSectionTitleWrapper}>
-          <h2>{title}</h2>
-          <h3>{subtitle}</h3>
+        <div className={simpleSectionTitleWrapper} style={{ backgroundColor }}>
+          <h2 style={{ color: titleColor }}>{title}</h2>
+          <h3 style={{ color: textColor }}>{subtitle}</h3>
           <div className={ctaButtonWrapper}>{ctaButton}</div>
         </div>
         <div className={imageWrapper}>
-          <Image
-            src={image.filename}
-            alt={image.alt}
-            width={720}
-            height={640}
-          />
+          {filename && (
+            <Image src={filename} alt={alt} width={720} height={640} />
+          )}
         </div>
-        {!expo && (
-          <div className={customShapeDividerBottom}>{footerSVG(white)}</div>
-        )}
+        <div className={customShapeDividerBottom}>{footerSVG(white)}</div>
       </div>
     )
 

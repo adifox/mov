@@ -1,8 +1,7 @@
 import { renderRichtext } from '../../../utils/storyblok'
 
-export const RichTextComponent = ({ blok, short }) => {
-  const { text } = blok
-  console.log('THE HELL:', text)
+export const RichTextComponent = ({ blok, short, color }) => {
+  const { text, textColor } = blok
   if (short) {
     const [firstParagraph] = text.content
 
@@ -14,12 +13,17 @@ export const RichTextComponent = ({ blok, short }) => {
     const HTML = renderRichtext(reducedContent)
     return (
       <>
-        <div dangerouslySetInnerHTML={HTML} />
-        <span>Más...</span>
+        <div style={{ fontWeight: 'normal' }} dangerouslySetInnerHTML={HTML} />
+        <span style={{ fontWeight: 'bold' }}>Más...</span>
       </>
     )
   } else {
     const HTML = renderRichtext(text)
-    return <div dangerouslySetInnerHTML={HTML} />
+    return (
+      <div
+        style={{ color: `${color ?? textColor}` }}
+        dangerouslySetInnerHTML={HTML}
+      />
+    )
   }
 }

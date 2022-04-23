@@ -12,7 +12,6 @@
   flex-direction: column;
   justify-content: center;
   background-color: #45533c;
-  color: #fff;
   padding: 32px 16px 48px 16px;
   margin-top: -8px;
 }
@@ -50,7 +49,7 @@
   position: relative;
   display: block;
   width: calc(138% + 1.3px);
-  height: 40px;
+  height: 30px;
 }
 .customShapeDividerBottom {
   bottom: -16px;
@@ -80,10 +79,6 @@
     padding: 0 16px 0 16px;
     margin-top: 0px;
   }
-  .customShapeDividerTop svg,
-  .customShapeDividerBottom svg {
-    height: 40px;
-  }
   .ctaButtonWrapper {
     justify-content: flex-start;
   }
@@ -93,10 +88,6 @@
 @media (min-width: 992px) {
   .simpleSectionTitleWrapper {
     padding: 0 96px 0 64px;
-  }
-  .customShapeDividerTop svg,
-  .customShapeDividerBottom svg {
-    height: 70px;
   }
 }
 
