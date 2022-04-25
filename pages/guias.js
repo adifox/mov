@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import { getStoryblokData } from '../utils/storyblok'
 import { ArticleHeader } from '../components/ui-components/article-header'
 import { DynamicComponent } from '../components/dynamic-component'
@@ -8,7 +9,7 @@ const COMPONENTS = {
   articleHeader: ArticleHeader,
 }
 
-export default function Guias({ storyblokData }) {
+export default function Guias({ storyblokData, getSliderData }) {
   console.log('DATA:', storyblokData)
   let headerContent = null
   const pageContent = storyblokData.data.story.content.body.map((blok) => {
@@ -19,6 +20,14 @@ export default function Guias({ storyblokData }) {
       return <DynamicComponent key={blok._uid} blok={blok} />
     }
   })
+
+  useEffect(() => {
+    storyblokData.data.story.content.body.forEach((blok) => {
+      if (blok.component === 'slider') {
+        getSliderData(blok)
+      }
+    })
+  }, [])
 
   return (
     <>

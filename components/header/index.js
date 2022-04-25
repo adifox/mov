@@ -54,6 +54,9 @@ export const Header = () => {
                 <Link href='/exposiciones'>EXPOSICIONES</Link>
               </li>
               <li className={menuItems}>
+                <Link href='/kit-digital'>KIT DIGITAL</Link>
+              </li>
+              <li className={menuItems}>
                 <Link href='/rsc'>RSC</Link>
               </li>
             </ul>
@@ -87,6 +90,9 @@ export const Header = () => {
             </li>
             <li className={mobileNavItems}>
               <Link href='/exposiciones'>EXPOSICIONES</Link>
+            </li>
+            <li className={mobileNavItems}>
+              <Link href='/kit-digital'>KIT DIGITAL</Link>
             </li>
             <li className={mobileNavItems}>
               <Link href='/rsc'>RSC</Link>

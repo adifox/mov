@@ -9,7 +9,7 @@ import styles from './layout.module.css'
 
 const { main } = styles
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, sliderData }) => {
   return (
     <>
       <Head>
@@ -17,7 +17,7 @@ export const Layout = ({ children }) => {
       </Head>
       <Header />
       <main className={main}>{children}</main>
-      <Footer />
+      <Footer sliderData={sliderData} />
     </>
   )
 }

@@ -35,6 +35,20 @@
 .white {
   fill: #fff;
 }
+.customImageDividerTop {
+  width: 100%;
+  position: absolute;
+  transform: rotate(180deg);
+  z-index: 1;
+  overflow: hidden;
+  line-height: 0;
+}
+.customImageDividerTop svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 30px;
+}
 .customShapeDividerTop,
 .customShapeDividerBottom {
   width: 100%;

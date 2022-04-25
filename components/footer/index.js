@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import { SliderWrapper } from '../ui-components/slider'
 import {
   footerSVG,
   logoSVG,
@@ -34,15 +35,20 @@ const {
   leaf,
   preFooterDesign,
   preFooterDesignInnerwrapper,
+  sliderWrapper,
+  sliderCustomShapeDivider,
+  grey,
 } = styles
 
 const HOME = '/'
 const ACTIVIDADES = '/actividades'
 const EXPOSICIONES = '/exposiciones'
+const GUIAS = '/guias'
+const WITHOUT_SLIDER_MARGIN = '150px'
+const WITH_SLIDER_MARGIN = '0px'
 
-export const Footer = () => {
-  const router = useRouter()
-  const { pathname } = router
+export const Footer = ({ sliderData }) => {
+  const { pathname } = useRouter()
   const [showDesignElement, setShowDesignElement] = useState(false)
 
   useEffect(() => {
@@ -59,7 +65,20 @@ export const Footer = () => {
 
   return (
     <>
-      <footer className={footer}>
+      {sliderData && (
+        <div className={sliderWrapper}>
+          <div className={sliderCustomShapeDivider}>{footerSVG(grey)}</div>
+          <SliderWrapper blok={sliderData} />
+        </div>
+      )}
+      <footer
+        style={{
+          marginTop: `${
+            sliderData ? WITH_SLIDER_MARGIN : WITHOUT_SLIDER_MARGIN
+          }`,
+        }}
+        className={footer}
+      >
         {showDesignElement && (
           <div className={preFooterDesign}>
             <div className={preFooterDesignInnerwrapper}>{leafSVG(leaf)}</div>

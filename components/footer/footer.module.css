@@ -16,12 +16,24 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+.sliderWrapper {
+  background-color: #eaefef;
+  margin-top: 150px;
+  padding-bottom: 150px;
+}
+.sliderCustomShapeDivider {
+  width: 100%;
+  position: absolute;
+  margin-top: -30px;
+  overflow: hidden;
+  line-height: 0;
+}
 .footer {
   background-color: #9cc6ad;
   width: 100vw;
   color: white;
+  margin-top: -30px;
   position: relative;
-  margin-top: 150px;
 }
 .customShapeDividerTop {
   width: 100%;
@@ -30,7 +42,8 @@
   overflow: hidden;
   line-height: 0;
 }
-.customShapeDividerTop svg {
+.customShapeDividerTop svg,
+.sliderCustomShapeDivider svg {
   position: relative;
   display: block;
   width: calc(141% + 1.3px);
@@ -41,6 +54,9 @@
 }
 .green {
   fill: #9cc6ad;
+}
+.grey {
+  fill: #eaefef;
 }
 .leaf {
   fill: #44523b;

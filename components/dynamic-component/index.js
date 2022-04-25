@@ -7,7 +7,7 @@ import { LeadTextSection } from '../ui-components/leadtext-section'
 import { ImageWrapper } from '../ui-components/image-wrapper'
 import { RichTextComponent } from '../ui-components/richtext-component'
 import { SideBarText } from '../ui-components/sidebar-text'
-import { SliderWrapper } from '../ui-components/slider'
+// import { SliderWrapper } from '../ui-components/slider'
 import { ArticleCluster } from '../ui-components/article-cluster'
 import { ArticleHeader } from '../ui-components/article-header'
 
@@ -20,7 +20,7 @@ const COMPONENTS = {
   image: ImageWrapper,
   richTextComponent: RichTextComponent,
   sideBarText: SideBarText,
-  slider: SliderWrapper,
+  // slider: SliderWrapper,
   articleCluster: ArticleCluster,
   articleHeader: ArticleHeader,
 }
