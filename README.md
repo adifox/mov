@@ -1,4 +1,4 @@
-## Getting Started with MOV
+## Getting Started with MOV and testimng GIT
 
 First, run the development server:
 
