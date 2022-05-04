@@ -43,9 +43,13 @@
   justify-content: center;
   align-items: center;
 }
-.menuItems {
+.menuItems a {
   background-color: #fff;
   color: #9cc6ad;
+}
+.greenLink a {
+  background-color: #fff;
+  color: #45533c;
 }
 .menuButton {
   border: none;
@@ -145,7 +149,8 @@
   .menuButton {
     display: none;
   }
-  .menuItems {
+  .menuItems,
+  .greenLink {
     margin-left: 20px;
   }
 }
@@ -162,7 +167,8 @@
     font-weight: 600;
     line-height: 24px;
   }
-  .menuItems {
+  .menuItems,
+  .greenLink {
     margin-left: 30px;
   }
   .menuButton {
